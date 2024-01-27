@@ -1,6 +1,6 @@
 import { logger } from './logger.js';
 import { settings } from './settings.js';
-import { WhisperDialog } from './RaiseHandDialog.js';
+import { RaiseHandDialog } from './RaiseHandDialog.js';
 
 logger.info(`Initializing Module`);
 Hooks.on('init', settings.register);
