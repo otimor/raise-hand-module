@@ -1,0 +1,36 @@
+{
+  "name" : "raise-hand-dialog",
+  "title" : "Raise Hand Dialog",
+  "description" : "Sends dialog to specificed connected user to simulate rising hands.",
+  "author" : ["Otimor"],
+  "version" : "",
+  "minimumCoreVersion" : "0.8.0",
+  "compatibleCoreVersion" : "0.8.9",
+  "esmodules" : [
+    "scripts/hooks.js"
+  ],
+  "styles" : [
+    "styles/RaiseHandDialog.css"
+  ],
+  "languages" : [
+    {
+      "lang" : "en",
+      "name" : "English",
+      "path" : "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Spanish",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polish",
+      "path": "lang/pl.json"
+    }
+  ],
+  "socket" : true,
+  "url" : "https://github.com/otimor/raise-hand-module/blob/main/",
+  "manifest" : "",
+  "download" : ""
+}

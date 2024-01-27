@@ -1,0 +1,23 @@
+{
+  "wd.setting.gmOnly.title" : "Dostęp tylko dla MG",
+  "wd.setting.gmOnly.hint" : "Limituje dostep tylko dla MG, aby uniknąc złosliwych zachowań",
+
+  "wd.setting.icon.title" : "Render Chat Window Icon",
+  "wd.setting.icon.hint" : "Disallows Icon on Chat Window",
+
+  "wd.setting.font_size.title" : "Rozmiar czcionki w wiadomości",
+  "wd.setting.font_size.hint" : "Pozwala ustalić rozmiar czcionki w wysyłanej wiadmomości",
+
+  "wd.setting.response.title" : "Przekaż odpowiedź",
+  "wd.setting.response.hint" : "Zwraca odpowiedź na okno dialogu, jesli zostanie on klikniety.",
+
+  "wd.dialog.noUserError" : "Żaden inny uzytkownik nie jest zalogowany.",
+  "wd.dialog.notGMError" : "Ten moduł jest dostepny tylko dla MG.",
+
+  "wd.dialog.content.chooseUser" : "Wybierz graczy:",
+  "wd.dialog.content.chatWhisper" : "Napisz na czacie",
+  "wd.dialog.content.message" : "Wiadomość:",
+
+  "wd.dialog.button.submit" : "Wyslij",
+  "wd.dialog.button.cancel" : "Anuluj"
+}
