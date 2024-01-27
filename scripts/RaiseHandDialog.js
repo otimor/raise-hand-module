@@ -1,7 +1,7 @@
 import {logger} from './logger.js';
 import {settings} from './settings.js';
 
-export class WhisperDialog extends Dialog{
+export class RaiseHandDialog extends Dialog{
   /*
     Overwrite
     //data
@@ -45,7 +45,7 @@ export class WhisperDialog extends Dialog{
     /*
       Emit Data or Display Dialog
     */
-    if(this.options.skipDialog) WhisperDialog.emitData({ 
+    if(this.options.skipDialog)RaiseHandDialog.emitData({
       users : this.data.users.length === 0 ?  game.users.map(user => user.id) : this.data.users.map(user => user.id), 
       content : this.data.content, 
       whisper : this.options.chatWhisper });
@@ -83,7 +83,7 @@ export class WhisperDialog extends Dialog{
       logger.debug("Submit | Options | ", this.options);
 
       if(button.label === "Submit")
-        WhisperDialog.emitData({
+        RaiseHandDialog.emitData({
           users : Array.from(element.find('[name=user]')).filter(ele=> ele.checked).map(ele => ele.id),
           content : element.find('[name=content]')[0].value,
           whisper : element.find('[name=whisper]')[0].checked,
@@ -98,8 +98,8 @@ export class WhisperDialog extends Dialog{
   static async confirm({ content, sender }){
     Dialog.confirm({
       title : `Whisper Dialog Message From : ${game.users.get(sender)?.name}`,
-      yes : () =>  WhisperDialog.emitResponse({ response : true, users : [sender]}),
-      no : () => WhisperDialog.emitResponse({ response : true, users : [sender]}),
+      yes : () =>  RaiseHandDialog.emitResponse({ response : true, users : [sender]}),
+      no : () => RaiseHandDialog.emitResponse({ response : true, users : [sender]}),
       content : content,
     });
   }
@@ -120,9 +120,9 @@ export class WhisperDialog extends Dialog{
   */
   static register(){
     logger.info("Registering Socket Access");
-    game.socket.on(`module.${settings.NAME}`, WhisperDialog.recieveData);
+    game.socket.on(`module.${settings.NAME}`, RaiseHandDialog.recieveData);
     logger.info("Registering Window Access");
-    window[settings.KEY] = WhisperDialog;
+    window[settings.KEY] = RaiseHandDialog;
   }
 
   static recieveData({ users, content, type, response , sender}){
@@ -135,10 +135,10 @@ export class WhisperDialog extends Dialog{
     if(!users.includes(game.userId)) return;
 
     if(type === "original"){
-      WhisperDialog.confirm({ content, sender });
+      RaiseHandDialog.confirm({ content, sender });
     }
     if(type === "response"){
-      WhisperDialog.prompt({ response, sender });
+      RaiseHandDialog.prompt({ response, sender });
     }
   }
 
@@ -177,6 +177,6 @@ export class WhisperDialog extends Dialog{
     HTML.find('#chat-controls label:first').before(element);
 
     /* check if WhisperDialog is Open first */
-    $(`#${app.id}-whisper-dialog`).click(()=> new WhisperDialog({},{}));
+    $(`#${app.id}-whisper-dialog`).click(()=> new RaiseHandDialog({},{}));
   }
 }
