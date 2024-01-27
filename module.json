@@ -3,7 +3,7 @@
   "title" : "Raise Hand Dialog",
   "description" : "Sends dialog to specificed connected user to simulate rising hands.",
   "author" : ["Otimor"],
-  "version" : "",
+  "version" : "0.0.1",
   "minimumCoreVersion" : "0.8.0",
   "compatibleCoreVersion" : "0.8.9",
   "esmodules" : [
